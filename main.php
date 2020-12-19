@@ -87,7 +87,7 @@
 				<button id="login" class="btn btn-info btn-lg" name="login">Login</button><br><br>
 				<?php
 				if(isset($_POST['login'])){
-					echo "<script>window.open('login.php','_self')</script>";
+					echo "<script>window.open('signin.php','_self')</script>";
 				}
 				?>
 			</form>	
