@@ -1,6 +1,6 @@
 <?php
 include("includes/connection.php");
-
+include("functions/functions.php");
 ?>
 <nav class="navbar navbar-default">
 	<div class="container-fluid">
@@ -11,7 +11,7 @@ include("includes/connection.php");
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="home.php">Lets Unite</a>
+			<a class="navbar-brand" href="home.php">Let's Unite</a>
 		</div>
 
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -31,7 +31,7 @@ include("includes/connection.php");
 			$Relationship_status = $row['Relationship'];
 			$user_pass = $row['user_pass'];
 			$user_email = $row['user_email'];
-			$user_city = $row['user_city'];
+			$user_country = $row['user_country'];
 			$user_gender = $row['user_gender'];
 			$user_birthday = $row['user_birthday'];
 			$user_image = $row['user_image'];
@@ -47,8 +47,8 @@ include("includes/connection.php");
 
 	        <li><a href='profile.php?<?php echo "u_id=$user_id" ?>'><?php echo "$first_name"; ?></a></li>
 	       	<li><a href="home.php">Home</a></li>
-			<li><a href="members.php">Find People</a></li>
-			<li><a href="messages.php?u_id=new">Messages</a></li>
+			
+			
 
 
 					<?php

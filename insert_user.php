@@ -7,7 +7,7 @@ include("includes/connection.php");
 		$last_name = htmlentities(mysqli_real_escape_string($con,$_POST['last_name']));
 		$pass = htmlentities(mysqli_real_escape_string($con,$_POST['u_pass']));
 		$email = htmlentities(mysqli_real_escape_string($con,$_POST['u_email']));
-		$city = htmlentities(mysqli_real_escape_string($con,$_POST['u_city']));
+		$country = htmlentities(mysqli_real_escape_string($con,$_POST['u_country']));
 		$gender = htmlentities(mysqli_real_escape_string($con,$_POST['u_gender']));
 		$birthday = htmlentities(mysqli_real_escape_string($con,$_POST['u_birthday']));
 		$status = "verified";
@@ -18,7 +18,7 @@ include("includes/connection.php");
 		$check_username_query = "select user_name from users where user_email='$email'";
 		$run_username = mysqli_query($con,$check_username_query);
 
-		if(strlen($pass) <8 ){
+		if(strlen($pass) <2 ){
 			echo"<script>alert('Password should be minimum 9 characters!')</script>";
 			exit();
 		}
@@ -39,12 +39,12 @@ include("includes/connection.php");
 			if($rand == 1)
 				$profile_pic = "1.jpg";
 			else if($rand == 2)
-				$profile_pic = "profile.jpg";
+				$profile_pic = "2.jpg";
 			else if($rand == 3)
-				$profile_pic = "2.png";
+				$profile_pic = "profile.png";
 
-		$insert = "insert into users (user_id,f_name,l_name,user_name,describe_user,Relationship,user_pass,user_email,user_city,user_gender,user_birthday,user_image,user_cover,user_reg_date,status,posts,recovery_account)
-		values('1','$first_name','$last_name','$username','Together we are strong ','...','$pass','$email','$city','$gender','$birthday','$profile_pic','cover.jpg',NOW(),'$status','$posts','Iwanttoputading intheuniverse.')";
+		$insert = "insert into users (f_name,l_name,user_name,describe_user,Relationship,user_pass,user_email,user_country,user_gender,user_birthday,user_image,user_cover,user_reg_date,status,posts,recovery_account)
+		values('$first_name','$last_name','$username','Hello Coding Cafe.This is my default status!','...','$pass','$email','$country','$gender','$birthday','$profile_pic','default_cover.jpg',NOW(),'$status','$posts','Iwanttoputading intheuniverse.')";
 		
 		$query = mysqli_query($con, $insert);
 
@@ -53,8 +53,8 @@ include("includes/connection.php");
 			echo "<script>window.open('signin.php', '_self')</script>";
 		}
 		else{
-		echo "<script>alert('Registration failed, please try again!')</script>";
-		echo "<script>window.open('signup.php', '_self')</script>";
+			echo "<script>alert('Registration failed, please try again!')</script>";
+			echo "<script>window.open('signup.php', '_self')</script>";
 		}
 	}
 ?>

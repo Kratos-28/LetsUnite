@@ -37,7 +37,7 @@
 <div class="row">
 	<div class="col-sm-12">
 		<div class="well">
-			<center><h1 style="color: white;">Let's Unite</h1></center>
+			<center><h1 style="color: white;">Lets Unite</h1></center>
 		</div>
 	</div>
 </div>
@@ -45,7 +45,7 @@
 	<div class="col-sm-12">
 		<div class="main-content">
 			<div class="header">
-				<h3 style="text-align: center;"><strong>Join us</strong></h3>
+				<h3 style="text-align: center;"><strong>Join us </strong></h3>
 				<hr>
 			</div>
 			<div class="l-part">
@@ -66,17 +66,19 @@
 						<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 						<input id="email" type="email" class="form-control" placeholder="Email" name="u_email" required="required">
 					</div><br>
-					<div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-chevron-down"></i></span>
-						<select class="form-control" placeholder="Select your city" name="u_city" required="required">
-							<option > Select your City</option>
-							<option > Bangalore</option>
-							<option > Chandigarh</option>
-							<option >Delhi </option>
-							<option > Hyderabad</option>
-							<option > Punjab</option>
-							<option > Kerela</option>
+					<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-chevron-down"></i></span>
+						<select class="form-control" name="u_country" required="required">
+							<option disabled>Select your Country</option>
+							<option>Pakistan</option>
+							<option>United States of America</option>
+							<option>India</option>
+							<option>Japan</option>
+							<option>UK</option>
+							<option>France</option>
+							<option>Germany</option>
 						</select>
-						</div><br>
+					</div><br>
 					<div class="input-group">
 						<span class="input-group-addon"><i class="glyphicon glyphicon-chevron-down"></i></span>
 						<select class="form-control input-md" name="u_gender" required="required">

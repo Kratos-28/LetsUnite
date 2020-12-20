@@ -1,3 +1,3 @@
 <?php
-$con = mysqli_connect("localhost","root","","unite_data");
+$con = mysqli_connect("localhost","root","","social_network");
 ?>

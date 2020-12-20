@@ -49,7 +49,7 @@
 <div class="row">
 	<div class="col-sm-12">
 		<div class="well">
-			<center><h1 style="color: white;">Lets Unite</h1></center>
+			<center><h1 style="color: white;">Coding Cafe</h1></center>
 		</div>
 	</div>
 </div>
@@ -57,7 +57,7 @@
 	<div class="col-sm-12">
 		<div class="main-content">
 			<div class="header">
-				<h3 style="text-align: center;"><strong>Login</strong></h3>
+				<h3 style="text-align: center;"><strong>Login to Coding Cafe</strong></h3>
 			</div>
 			<div class="l-part">
 				<form action="" method="post">
@@ -69,7 +69,8 @@
 					<a style="text-decoration: none;float: right;color: #187FAB;" data-toggle="tooltip" title="Create Account!" href="signup.php">Don't have an account?</a><br><br>
 
 					<center><button id="signin" class="btn btn-info btn-lg" name="login">Login</button></center>
-					<?php include("login.php"); ?>				</form>
+					<?php include("login.php"); ?>
+				</form>
 			</div>
 		</div>
 	</div>
