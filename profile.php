@@ -50,6 +50,15 @@ if(!isset($_SESSION['user_email'])){
 		cursor: pointer;
 		transform: translate(-50%, -50%);
 	}
+	#own_posts{
+		border: 5px solid #e6e6e6;
+		padding: 40px 50px;
+	}
+	#post_img{
+		height: 300px;
+		width: 100%;
+
+	}
 </style>
 <body>
 <div class="row">
@@ -212,8 +221,8 @@ if(!isset($_SESSION['user_email'])){
 							</div>
 
 						</div><br>
-						<a href='single.php?post_id=$post_id' style='float:right;'><button class='btn btn-success'>View</button></a><br>
-						<a href='functions/delete_post.php?post_id=$post_id' style='float:right;'><button class='btn btn-danger'>Delete</a><br><br>
+						<a href='single.php?post_id=$post_id' style='float:right;'><button class='btn btn-success'>View</button></a>
+						<a href='functions/delete_post.php?post_id=$post_id' style='float:right;'><button class='btn btn-danger'>Delete</a>
 				
 					</div>
 
@@ -240,13 +249,14 @@ if(!isset($_SESSION['user_email'])){
 						</div>
 						<div class='row'>
 							<div class='col-sm-12'>
-							<p>$content</p>
+							<h4><p>$content</p></h4>
 							<img id='posts-img' src='imagepost/$upload_image' style='height:350px;'>
 							</div>
 
 						</div><br>
-						<a href='single.php?post_id=$post_id' style='float:right;'><button class='btn btn-success'>View</button></a><br>
-						<a href='functions/delete_post.php?post_id=$post_id' style='float:right;'><button class='btn btn-danger'>Delete</a><br><br>
+						<a href='single.php?post_id=$post_id' style='float:right;'><button class='btn btn-success'>View</button></a>
+						<a href='edit_post.php?post_id=$post_id' style='float:right;'><button class='btn btn-info'>Edit</button></a>
+						<a href='functions/delete_post.php?post_id=$post_id' style='float:right;'><button class='btn btn-danger'>Delete</a>
 				
 					</div>
 
@@ -272,21 +282,51 @@ if(!isset($_SESSION['user_email'])){
 
 						</div>
 						<div class='row'>
-							<div class='col-sm-12'>
-							
+						<div class='col-sm-2'></div>
+							<div class='col-sm-6'>
+								<h3><p>$content</p></h3>							
 							</div>
-
-						</div><br>
-						<a href='single.php?post_id=$post_id' style='float:right;'><button class='btn btn-success'>View</button></a><br>
-						<a href='functions/delete_post.php?post_id=$post_id' style='float:right;'><button class='btn btn-danger'>Delete</a><br><br>
-				
+									<div class='col-sm-4'></div>
+						
 					</div>
 
 					"	;
+					global $con;
+					if(isset($_GET['u_id'])){
+						$u_id =$_GET['u_id'];
+					}
+					$get_posts="select user_email from users where user_id='$u_id'";
+					$run_user=mysqli_query($con,$get_posts);
+					$row=mysqli_fetch_array($run_user);
+
+					$user_email=$row['user_email'];
+					$user=$_SESSION['user_email'];
+					$get_user="select * from users where user_email='$user'";
+					$run_user=mysqli_query($con,$get_user);
+					$row=mysqli_fetch_array($run_user);
+
+					$user_id=row['user_id'];
+					$u_email=row['user_email'];
+
+					if($u_email!=$user_email){
+						echo "<script>window.open(profile.php?u_id','_self')</script>";
+					}
+					else{
+						echo"
+						<a href='single.php?post_id=$post_id' style='float:right;'><button class='btn btn-success'>View</button></a>
+						<a href='edit_post.php?post_id=$post_id' style='float:right;'><button class='btn btn-info'>Edit</button></a>
+						<a href='functions/delete_post.php?post_id=$post_id' style='float:right;'><button class='btn btn-danger'>Delete</a>
+							</div><br>
+						";
+					}
+
 				}
+
+				include("functions/delete_post.php");
 		}
 		?>
 	</div>
+	<div class="col-sm-2"></div>
 </div>
 </body>
 </html>
