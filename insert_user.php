@@ -37,14 +37,14 @@ include("includes/connection.php");
 		$rand = rand(1, 3); 
 
 			if($rand == 1)
-				$profile_pic = "7.png";
+				$profile_pic = "1.jpg";
 			else if($rand == 2)
-				$profile_pic = "8.png";
+				$profile_pic = "profile.jpg";
 			else if($rand == 3)
-				$profile_pic = "9.png";
+				$profile_pic = "2.png";
 
 		$insert = "insert into users (user_id,f_name,l_name,user_name,describe_user,Relationship,user_pass,user_email,user_city,user_gender,user_birthday,user_image,user_cover,user_reg_date,status,posts,recovery_account)
-		values('1','$first_name','$last_name','$username','Together we are strong ','...','$pass','$email','$city','$gender','$birthday','$profile_pic','default_cover.jpg',NOW(),'$status','$posts','Iwanttoputading intheuniverse.')";
+		values('1','$first_name','$last_name','$username','Together we are strong ','...','$pass','$email','$city','$gender','$birthday','$profile_pic','cover.jpg',NOW(),'$status','$posts','Iwanttoputading intheuniverse.')";
 		
 		$query = mysqli_query($con, $insert);
 
