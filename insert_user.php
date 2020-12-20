@@ -44,7 +44,7 @@ include("includes/connection.php");
 				$profile_pic = "profile.png";
 
 		$insert = "insert into users (f_name,l_name,user_name,describe_user,Relationship,user_pass,user_email,user_country,user_gender,user_birthday,user_image,user_cover,user_reg_date,status,posts,recovery_account)
-		values('$first_name','$last_name','$username','Hello Coding Cafe.This is my default status!','...','$pass','$email','$country','$gender','$birthday','$profile_pic','default_cover.jpg',NOW(),'$status','$posts','Iwanttoputading intheuniverse.')";
+		values('$first_name','$last_name','$username','This is my default status!','...','$pass','$email','$country','$gender','$birthday','$profile_pic','default_cover.jpg',NOW(),'$status','$posts','Murphy is my pet dog.')";
 		
 		$query = mysqli_query($con, $insert);
 
